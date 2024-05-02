@@ -20,7 +20,7 @@ jobs:
           git config --global user.email "david.vanzo@outsidethebox.ar"
           git config --global user.name "davidoutside"
 
-      - name: Mergee main -> develop
+      - name: Merge main -> develop
         continue-on-error: true
         run: |
           git checkout develop
