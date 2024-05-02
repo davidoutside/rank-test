@@ -1,0 +1,12 @@
+name: Deploy to live site
+
+on:
+
+  push:
+    branches:
+      - devops/fix_merge_branchs
+
+jobs:  
+  sync-branchs:
+    name: synchronization branchs
+    uses: ./.github/workflows/synchronization-branchs.yml
