@@ -33,14 +33,5 @@ jobs:
           git merge origin/master --no-ff --no-edit
           git push --set-upstream origin/otb-staging
         env:
-          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN_CHAK }}  
-
-      - name: Notify on failure merge by slack
-        if: steps.otb-stg.outcome != 'success' || steps.dev.outcome != 'success' || steps.stg.outcome != 'success' 
-        continue-on-error: true
-        run: |
-          chmod +x ./.github/workflows/send-notification-slack.sh
-          ./.github/workflows/send-notification-slack.sh
-      # Add secret SLACK_WEBHOOK.
-        env:
-          SLACK_WEBHOOK: "https://hooks.slack.com/services/06SHM7UVV2/B06V8KXNWBE/cZTKgtdDawXu2Fhrg1WTHk8O"
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN_CHAK }} 
+          
