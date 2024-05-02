@@ -30,6 +30,6 @@ jobs:
         run: |
           git checkout develop
           git merge main --no-ff --no-edit
-          git remote set-url origin https://${{ secrets.TEST_TOKEN }}@github.com/davidoutside/rank-test.git
+          git remote set-url origin https://${{secrets.MY_PAT}}@github.com/davidoutside/rank-test.git
           git push origin develop
           
