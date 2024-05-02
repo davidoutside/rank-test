@@ -20,6 +20,7 @@ jobs:
           git config --global user.email "david.vanzo@outsidethebox.ar"
           git config --global user.name "davidoutside"
 
+
       - name: Merge main -> develop
         continue-on-error: true
         run: |
@@ -28,3 +29,4 @@ jobs:
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
+          
