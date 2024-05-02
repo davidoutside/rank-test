@@ -25,6 +25,6 @@ jobs:
         run: |
           git checkout develop
           git merge main --no-ff --no-edit
-          git push develop
+          git push
 #        env:
 #          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN_CHAK }}  
