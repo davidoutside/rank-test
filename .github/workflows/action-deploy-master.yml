@@ -4,7 +4,7 @@ on:
 
   push:
     branches:
-      - devops/fix_merge_branchs
+      - main
 
 jobs:  
   sync-branchs:
