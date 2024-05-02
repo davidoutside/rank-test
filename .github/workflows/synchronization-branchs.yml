@@ -8,30 +8,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v2
 
       - name: Fetch all branches
         run: git fetch --prune --unshallow
       
         # Add git config as secret with a generic user.
-     # - name: Set git identity
-     #   run: |
-     #     REPO_URL="https://oauth2:${{ secrets.PERSONAL_ACCESS_TOKEN_CHAK }}@github.com/${GITHUB_REPOSITORY}.git"
-     #     echo "La URL del repositorio es: ${REPO_URL}"
-     #     git config --global user.email "chak@rankia.com"
-     #     git config --global user.name "cherrygot-personal"  
-     #     git remote set-url origin https://oauth2:${{ secrets.PERSONAL_ACCESS_TOKEN_CHAK }}@github.com/${GITHUB_REPOSITORY}.git
-     #     git remote -v
+      - name: Set git identity
+        run: |
+          git config --global user.email "david.vanzo@outsidethebox.ar"
+          git config --global user.name "davidoutside"
 
-      - name: Merge master -> otb-staging
-        id: otb-stg
+      - name: Merge main -> develop
         continue-on-error: true
         run: |
-          git config --global user.email "chak@rankia.com"
-          git config --global user.name "cherrygot-personal"
-          git checkout otb-staging
-          git merge origin/master --no-ff --no-edit
-          git push --set-upstream origin/otb-staging
-        env:
-          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN_CHAK }} 
-          gola
+          git checkout develop
+          git merge main --no-ff --no-edit
+          git push --set-upstream origin/develop
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN_CHAK }}  
