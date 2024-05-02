@@ -13,12 +13,16 @@ jobs:
 
       - name: Fetch all branches
         run: git fetch --prune --unshallow
+        env:
+          GITHUB_TOKEN: ${{ secrets.TEST_TOKEN }}  
       
         # Add git config as secret with a generic user.
       - name: Set git identity
         run: |
           git config --global user.email "david.vanzo@outsidethebox.ar"
           git config --global user.name "davidoutside"
+        env:
+          GITHUB_TOKEN: ${{ secrets.TEST_TOKEN }}  
 
 
       - name: Merge main -> develop
@@ -26,7 +30,6 @@ jobs:
         run: |
           git checkout develop
           git merge main --no-ff --no-edit
-          git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.TEST_TOKEN }}  
+          git remote set-url origin https://${{ secrets.TEST_TOKEN }}@github.com/davidoutside/rank-test.git
+          git push origin develop
           
