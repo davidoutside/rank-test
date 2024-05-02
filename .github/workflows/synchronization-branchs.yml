@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-        
+
 
       - name: Fetch all branches
         run: git fetch --prune --unshallow
@@ -25,6 +25,6 @@ jobs:
         run: |
           git checkout develop
           git merge main --no-ff --no-edit
-          git push --set-upstream origin/develop
+          git push origin/develop
 #        env:
 #          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN_CHAK }}  
