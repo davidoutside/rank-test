@@ -7,6 +7,8 @@ on:
 
 jobs:
   sync-branches:
+    permissions:
+      actions: write
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
