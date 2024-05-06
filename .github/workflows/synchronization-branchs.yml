@@ -4,6 +4,7 @@ on:
   workflow_call: {}
 
 
+  
 jobs:
   sync-branches:
     runs-on: ubuntu-latest
