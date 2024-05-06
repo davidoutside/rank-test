@@ -6,7 +6,8 @@ on:
 jobs:
   sync-branches:
     permissions:
-      contents: write
+      contents: read
+      pages: write
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
