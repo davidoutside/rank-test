@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+        with:
+          github_token: ${{ secrets.TEST_TOKEN }}
 
       - name: Fetch all branches
         run: git fetch --prune --unshallow
