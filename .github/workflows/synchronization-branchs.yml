@@ -22,7 +22,7 @@ jobs:
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
-          git remote set-url origin https://${{GIT_TOKEN}}@github.com/davidoutside/rank-test.git
+          git remote set-url origin https://${GIT_TOKEN}@github.com/davidoutside/rank-test.git
           git checkout develop
           git merge main --no-ff --no-edit
           git push origin develop
