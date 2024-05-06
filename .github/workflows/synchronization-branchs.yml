@@ -2,6 +2,7 @@ name: Synchronization branchs
 
 on:
   workflow_call: {}
+  
 
 jobs:
   sync-branches:
