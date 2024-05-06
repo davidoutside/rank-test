@@ -17,7 +17,7 @@ jobs:
 
       - name: Merge main -> develop
         env:
-          GIT_TOKEN: ${{ secrets.MY_PAT }}
+          GIT_TOKEN: ${{ secrets.TEST_TOKEN }}
         continue-on-error: true
         run: |
           git config --global user.name "GitHub Actions"
