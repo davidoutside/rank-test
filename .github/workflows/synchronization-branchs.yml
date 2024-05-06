@@ -8,7 +8,10 @@ on:
 jobs:
   sync-branches:
     runs-on: ubuntu-latest
-    steps:        
+    steps:
+      - name: Checkout repository
+        uses:  actions/checkout@v4
+         
       - name: Merge main -> develop
         env:
           GIT_TOKEN: ${{ secrets.TEST_TOKEN }}
